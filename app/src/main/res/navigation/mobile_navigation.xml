@@ -3,26 +3,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_music">
 
     <fragment
-        android:id="@+id/nav_home"
-        android:name="com.vnhanh.musicplayer.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home">
+        android:id="@+id/nav_music"
+        android:name="com.vnhanh.musicplayer.ui.music.MusicFragment"
+        android:label="@string/menu_music"
+        tools:layout="@layout/fragment_music">
 
         <action
-            android:id="@+id/action_HomeFragment_to_HomeSecondFragment"
+            android:id="@+id/action_MusicFragment_to_HomeSecondFragment"
             app:destination="@id/nav_home_second" />
     </fragment>
     <fragment
         android:id="@+id/nav_home_second"
-        android:name="com.vnhanh.musicplayer.ui.home.HomeSecondFragment"
+        android:name="com.vnhanh.musicplayer.ui.music.HomeSecondFragment"
         android:label="@string/home_second"
         tools:layout="@layout/fragment_home_second">
         <action
             android:id="@+id/action_HomeSecondFragment_to_HomeFragment"
-            app:destination="@id/nav_home" />
+            app:destination="@id/nav_music" />
 
         <argument
             android:name="myArg"
@@ -30,14 +30,14 @@
     </fragment>
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.vnhanh.musicplayer.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_video"
+        android:name="com.vnhanh.musicplayer.ui.video.VideoFragment"
+        android:label="@string/menu_video"
+        tools:layout="@layout/fragment_video" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.vnhanh.musicplayer.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_scan"
+        android:name="com.vnhanh.musicplayer.ui.scan.ScanFragment"
+        android:label="@string/menu_scan"
+        tools:layout="@layout/fragment_scan" />
 </navigation>

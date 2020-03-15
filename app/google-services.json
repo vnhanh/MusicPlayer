@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "52860964528",
+    "firebase_url": "https://music-271211.firebaseio.com",
+    "project_id": "music-271211",
+    "storage_bucket": "music-271211.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:52860964528:android:e013e2af7cda237a367575",
+        "android_client_info": {
+          "package_name": "com.vnhanh.musicplayer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "52860964528-7bin5n3m7k1um8t3dkjfhs34fnt3kq10.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vnhanh.musicplayer",
+            "certificate_hash": "a8d61da20518322cece3ec1c82518b4c69202e1e"
+          }
+        },
+        {
+          "client_id": "52860964528-mru8gc9rq7f12baes1gmdjjruanifuo5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIsCfjcOWf0C1sseWIz9DK9QDnk4p_NaY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "52860964528-mru8gc9rq7f12baes1gmdjjruanifuo5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

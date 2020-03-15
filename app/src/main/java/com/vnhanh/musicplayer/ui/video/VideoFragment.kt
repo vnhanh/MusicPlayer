@@ -1,4 +1,4 @@
-package com.vnhanh.musicplayer.ui.gallery
+package com.vnhanh.musicplayer.ui.video
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,20 +10,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.vnhanh.musicplayer.R
 
-class GalleryFragment : Fragment() {
+class VideoFragment : Fragment() {
 
-    private lateinit var galleryViewModel: GalleryViewModel
+    private lateinit var videoViewModel: VideoViewModel
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        galleryViewModel =
-                ViewModelProviders.of(this).get(GalleryViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_gallery, container, false)
+        videoViewModel =
+                ViewModelProviders.of(this).get(VideoViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_video, container, false)
         val textView: TextView = root.findViewById(R.id.text_gallery)
-        galleryViewModel.text.observe(viewLifecycleOwner, Observer {
+        videoViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root

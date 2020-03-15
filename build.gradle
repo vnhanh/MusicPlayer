@@ -10,12 +10,13 @@ buildscript {
     ext.rxJavaVersion = '2.0.1'
     ext.rxAndroidVersion = '2.1.1'
     ext.gsonVersion = '2.8.5'
-    ext.scottyVersion = '0.1.7'
+    ext.firebaseVersion = '4.3.3'
+    ext.crashlyticsVersion = '2.0.0-beta02'
 
     repositories {
         google()
         jcenter()
-        
+        maven { url 'https://maven.fabric.io/public' }
     }
 
     dependencies {
@@ -25,6 +26,8 @@ buildscript {
         classpath "org.jetbrains.kotlin:kotlin-android-extensions:$kotlinVersion"
         classpath "com.google.gms:google-services:$googleServiceVersion"
         classpath "net.sf.proguard:proguard-gradle:$proguardVersion"
+        classpath "com.google.gms:google-services:$firebaseVersion"
+        classpath "com.google.firebase:firebase-crashlytics-gradle:$crashlyticsVersion"
     }
 }
 

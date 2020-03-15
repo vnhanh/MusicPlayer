@@ -1,6 +1,9 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
 
 android {
     compileSdkVersion 29
@@ -17,9 +20,18 @@ android {
     }
 
     buildTypes {
-        release {
+        debug{
+            debuggable true
+            shrinkResources false
             minifyEnabled false
+            buildConfigField "boolean", "USE_CRASHLYTICS", "false"
+        }
+        release {
+            debuggable false
+            shrinkResources true
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "boolean", "USE_CRASHLYTICS", "true"
         }
     }
 
@@ -34,6 +46,25 @@ android {
 
 }
 
+ext {
+    // google android lib
+    constraintLayoutVersion = '1.1.3'
+
+    // google play service
+    playServicesVisionVersion = '19.0.0'
+    firebaseAnalyticsVersion = '17.2.3'
+    firebaseCrashlyticsVersion = '17.0.0-beta01'
+
+    // dagger
+    daggerVersion = '2.24'
+
+    // okhttp3
+    okhttp3Version = '4.4.0'
+
+    // glide
+    glideVersion = '4.10.0'
+}
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
@@ -41,12 +72,37 @@ dependencies {
     implementation 'androidx.core:core-ktx:1.2.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'com.google.android.material:material:1.1.0'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    implementation 'androidx.navigation:navigation-fragment:2.2.1'
-    implementation 'androidx.navigation:navigation-ui:2.2.1'
+    implementation "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+
+    // navigation
+    implementation 'androidx.navigation:navigation-ui:2.2.1'
+    implementation 'androidx.navigation:navigation-fragment:2.2.1'
     implementation 'androidx.navigation:navigation-fragment-ktx:2.2.1'
     implementation 'androidx.navigation:navigation-ui-ktx:2.2.1'
+
+    // dagger
+    implementation "com.google.dagger:dagger-android:$daggerVersion"
+    implementation "com.google.dagger:dagger-android-support:$daggerVersion"
+    kapt "com.google.dagger:dagger-compiler:$daggerVersion"
+    kapt "com.google.dagger:dagger-android-processor:$daggerVersion"
+
+   // okhttp3
+    implementation "com.squareup.okhttp3:okhttp:$okhttp3Version"
+
+    // glide
+    implementation "com.github.bumptech.glide:glide:$glideVersion"
+    kapt "com.github.bumptech.glide:compiler:$glideVersion"
+    implementation("com.github.bumptech.glide:okhttp3-integration:$glideVersion") {
+        exclude group: 'glide-parent'
+    }
+
+    // google play services
+    implementation "com.google.android.gms:play-services-vision:$playServicesVisionVersion"
+
+    // google firebase
+    implementation "com.google.firebase:firebase-analytics:$firebaseAnalyticsVersion"
+    implementation "com.google.firebase:firebase-crashlytics:$firebaseCrashlyticsVersion"
 
     // test
     testImplementation 'junit:junit:4.12'
