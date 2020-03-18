@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.vnhanh.musicplayer.R
+import kotlinx.android.synthetic.main.fragment_music.*
 
 class MusicFragment : Fragment() {
 

@@ -7,7 +7,7 @@ apply plugin: 'com.google.firebase.crashlytics'
 
 android {
     compileSdkVersion 29
-    buildToolsVersion "29.0.2"
+    buildToolsVersion "29.0.3"
 
     defaultConfig {
         applicationId "com.vnhanh.musicplayer"
@@ -44,23 +44,22 @@ android {
         jvmTarget = JavaVersion.VERSION_1_8
     }
 
+//    dataBinding{
+//        enable = true
+//    }
 }
 
 ext {
     // google android lib
     constraintLayoutVersion = '1.1.3'
-
     // google play service
     playServicesVisionVersion = '19.0.0'
     firebaseAnalyticsVersion = '17.2.3'
     firebaseCrashlyticsVersion = '17.0.0-beta01'
-
     // dagger
     daggerVersion = '2.24'
-
     // okhttp3
     okhttp3Version = '4.4.0'
-
     // glide
     glideVersion = '4.10.0'
 }
