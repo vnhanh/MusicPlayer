@@ -17,5 +17,14 @@ pipeline {
                 }
             }
         }
+
+        stage ('Run UITest') {
+            steps {
+                withGradle {
+                    sh 'adb devices'
+                    sh './gradlew debugExecuteScreenshotTests -Precord -Pandroid.testInstrumentationRunnerArguments.class=com.vnhanh.musicplayer.MainActivityUITest#verify'
+                }
+            }
+        }
     }
 }
