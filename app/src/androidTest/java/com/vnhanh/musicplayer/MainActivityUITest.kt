@@ -26,14 +26,11 @@ class MainActivityUITest {
         const val TAG = "LOG"
     }
 
-//    @Rule
-//    @JvmField
-//    val grantPermissionRule = GrantPermissionRule.grant(
-//        "android.permission.ACCESS_FINE_LOCATION",
-//        "android.permission.ACCESS_COARSE_LOCATION",
-//        "android.permission.READ_PHONE_STATE",
-//        "android.permission.READ_EXTERNAL_STORAGE",
-//        "android.permission.WRITE_EXTERNAL_STORAGE")
+    @Rule
+    @JvmField
+    val grantPermissionRule = GrantPermissionRule.grant(
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE")
 
     @JvmField
     var activityTestRule = ActivityTestRule(MainActivity::class.java)
