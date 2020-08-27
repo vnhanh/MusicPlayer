@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage ('Compile Stage') {
             steps {
-                withMaven(maven: 'gradle_6_1_1'){
+                withGradle(gradle: 'gradle_6_1_1'){
                     sh './gradlew clean'
                 }
             }
@@ -12,7 +12,7 @@ pipeline {
 
         stage ('Testing Stage') {
             steps {
-                withMaven(maven: 'gradle_6_1_1') {
+                withGradle(gradle: 'gradle_6_1_1') {
                     sh './gradlew build'
                 }
             }
